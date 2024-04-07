@@ -2,8 +2,9 @@
 const Navbarnav = document.querySelector(".navbar-nav");
 
 // ketika sidebar di klik
-document.querySelector("#Sidebar").onclick = () => {
+document.querySelector("#Sidebar").onclick = (e) => {
   Navbarnav.classList.toggle("active");
+  e.preventDefault();
 };
 
 // toggle aktivasi untuk icon search
