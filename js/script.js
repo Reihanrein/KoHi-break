@@ -43,9 +43,9 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// Klik icon mata untuk munnculkan modal box
+// Klik icon mata untuk munculkan modal box
 const itemDetail = document.querySelector("#item-detail");
-const itemDetailButtons = document.querySelectorAll(".item-detail-button");
+const itemDetailButtons = document.querySelector(".item-detail-button");
 
 itemDetailButtons.forEach((btn) => {
   btn.onclick = (e) => {
