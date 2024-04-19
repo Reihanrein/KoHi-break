@@ -68,7 +68,41 @@ document.addEventListener("alpine:init", () => {
         this.total -= cartItem.price;
       }
     },
+    clearCart(id) {
+      const cartItem = this.items.find((item) => item.id === id);
+
+      if (cartItem.quantity > 1) {
+        this.items = this.items.map((item) => {
+          if (item.id !== id) {
+            return item;
+          } else {
+            this.items = [];
+            this.quantity = 0;
+            this.total = 0;
+          }
+        });
+      }
+    },
   });
+});
+
+// Validasi Form
+const validator = document.querySelector(".checkout-button");
+validator.disabled = true;
+
+const form = document.querySelector("#checkoutForm");
+
+form.addEventListener("keyup", function () {
+  for (let i = 0; i < form.elements.length; i++) {
+    if (form.elements[i].value.length !== 0) {
+      validator.classList.remove("disabled");
+      validator.classList.add("disabled");
+    } else {
+      return false;
+    }
+  }
+  validator.disabled = false;
+  validator.classList.remove("disabled");
 });
 
 const rupiah = (number) => {

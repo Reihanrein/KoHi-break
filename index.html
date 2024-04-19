@@ -22,7 +22,7 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <!-- Direktori AlpineJS -->
-    <script src="src/app.js"></script>
+    <script src="src/app.js" async></script>
   </head>
   <body>
     <!-- Navbar Start -->
@@ -72,22 +72,9 @@
                 <span x-text="item.quantity"></span>
                 <button id="add" @click="$store.cart.add(item)">&plus;</button>
                 &equals;
-                <span x-text="rupiah(item.total)"></span>
+                <span id="sub-total" x-text="rupiah(item.total)"></span>
               </div>
             </div>
-            <svg
-              x-data=""
-              width="24"
-              height="24"
-              fill="none"
-              stroke="black"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="remove-item"
-            >
-              <use href="img/feather-sprite.svg#trash-2" />
-            </svg>
           </div>
         </template>
         <h4 x-show="!$store.cart.items.length">Keranjang anda kosong</h4>
@@ -111,7 +98,7 @@
               <input type="number" id="phone" name="phone" autocomplete="off" />
             </label>
             <button
-              class="checkout-button"
+              class="checkout-button disabled"
               type="submit"
               id="checkout-button"
               value="checkout"
