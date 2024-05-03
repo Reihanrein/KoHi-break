@@ -83,6 +83,12 @@
         </h4>
         <div class="form-checkout" x-show="$store.cart.items.length">
           <form action="" id="checkoutForm">
+            <input
+              type="hidden"
+              name="items"
+              x-model="JSON.stringify($store.cart.items)"
+            />
+            <input type="hidden" name="total" x-model="$store.cart.total" />
             <h5>Detail Pelanggan</h5>
 
             <label for="name">
@@ -235,7 +241,7 @@
                   <use href="img/feather-sprite.svg#shopping-cart" />
                 </svg>
               </a>
-              <a href="#" class="item-detail-button">
+              <a href="#" class="item-detail-button" onclick="mata()">
                 <svg
                   width="24"
                   height="24"
@@ -431,7 +437,7 @@
 
     <!-- Javascript -->
 
-    <script src="js/script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
 

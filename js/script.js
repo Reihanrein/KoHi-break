@@ -44,15 +44,14 @@ document.addEventListener("click", function (e) {
 });
 
 // Klik icon mata untuk munculkan modal box
-const itemDetail = document.querySelector("#item-detail");
-const itemDetailButtons = document.querySelector(".item-detail-button");
+const itemDetail = document.querySelector(".modal");
+const itemDetailButtons = document.querySelectorAll(".item-detail-button");
+itemDetail.style.display = "none";
+console.log(itemDetailButtons);
 
-itemDetailButtons.forEach((btn) => {
-  btn.onclick = (e) => {
-    itemDetail.style.display = "flex";
-    e.preventDefault();
-  };
-});
+function mata() {
+  itemDetail.style.display = "flex";
+}
 
 // Klik tombol close modal
 document.querySelector(".modal .close-icon").onclick = (e) => {

@@ -105,6 +105,32 @@ form.addEventListener("keyup", function () {
   validator.classList.remove("disabled");
 });
 
+// kirim data ketika klik checkout
+validator.addEventListener("click", function (e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const data = new URLSearchParams(formData);
+  const objData = Object.fromEntries(data);
+  console.log(objData);
+  const message = formatMessage(objData);
+  window.open("http://wa.me/621212121212?text=" + encodeURIComponent(message));
+});
+
+// Format data ke whatsapp
+const formatMessage = (obj) => {
+  return `Data Customer
+    Nama: ${obj.name}
+    Email: ${obj.email}
+    No HP: ${obj.phone}
+
+Data Pesanan
+  ${JSON.parse(obj.items).map(
+    (item) => `${item.name} (${item.quantity} x ${rupiah(item.total)}) \n`
+  )}
+Total: ${rupiah(obj.total)}
+Terima Kasih.`;
+};
+
 const rupiah = (number) => {
   return new Intl.NumberFormat("id-ID", {
     style: "currency",

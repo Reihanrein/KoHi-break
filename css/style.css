@@ -156,6 +156,7 @@ body {
   width: 35rem;
   height: 100vh;
   padding: 0 1.5rem;
+  padding-bottom: 3rem;
   color: var(--bg);
   background-color: #fff;
   transition: 0.5s;
@@ -611,7 +612,6 @@ footer .credit a {
 /* Item Detail */
 
 .modal {
-  display: none;
   position: fixed;
   z-index: 9999;
   left: 0;
