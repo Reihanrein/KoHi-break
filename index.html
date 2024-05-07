@@ -34,8 +34,9 @@
         <a href="#home">Home</a>
         <a href="#about">Tentang Kami</a>
         <a href="#menu">Menu</a>
-        <a href="#products">Take Away</a>
+        <a href="#products">Delivery</a>
         <a href="#contact">Kontak</a>
+        <a href="#">Jobs</a>
       </div>
 
       <div class="navbar-mark">
@@ -219,7 +220,7 @@
 
     <!-- Product Section Ready -->
     <section class="products" id="products" x-data="products">
-      <h2><span>Produk</span> Take Away</h2>
+      <h2><span>Produk</span> Delivery</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
         exercitationem delectus ratione blanditiis! Aspernatur, nisi!
@@ -401,12 +402,13 @@
     <!-- Modal Box Item Detail Start -->
 
     <div class="modal" id="item-detail">
+      <!-- <template x-for="(item, index) in items" x-key="index"> -->
       <div class="modal-container">
         <a href="#" class="close-icon"><i data-feather="x"></i></a>
         <div class="modal-content">
-          <img src="img\products\coffe-cup.jpg" alt="coffe-cup" />
+          <img src="img/products/1.jpg" alt="item.name" />
           <div class="product-content">
-            <h3>Coffee bungkus1</h3>
+            <!-- <h3 x-text="item.name"></h3> -->
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
               delectus nihil dolorem! Ea repellendus aperiam voluptatem est non
@@ -419,13 +421,16 @@
               <i data-feather="star"></i>
               <i data-feather="star"></i>
             </div>
-            <div class="product-price">IDR 9K <span>IDR 12K</span></div>
-            <a href="#"
+            <div class="product-price">
+              <!-- <span x-text="rupiah(item.price)">IDR 12K</span> -->
+            </div>
+            <a href="#" @click.prevent="$store.cart.add(item)"
               ><i data-feather="shopping-cart"></i> <span>+Keranjang</span></a
             >
           </div>
         </div>
       </div>
+      <!-- </template> -->
     </div>
 
     <!-- Modal Box Item Detail End -->
