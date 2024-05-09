@@ -32,10 +32,10 @@
 
       <div class="navbar-nav">
         <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
+        <a href="#about">About</a>
         <a href="#menu">Menu</a>
-        <a href="#products">Delivery</a>
-        <a href="#contact">Kontak</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
         <a href="#">Jobs</a>
       </div>
 
@@ -104,6 +104,13 @@
               <span>Phone</span>
               <input type="number" id="phone" name="phone" autocomplete="off" />
             </label>
+            <label for="order">
+              <span>Order</span>
+              <select name="order" id="order">
+                <option value="Delivery">Delivery</option>
+                <option value="Take Away">Take Away</option>
+              </select>
+            </label>
             <button
               class="checkout-button disabled"
               type="submit"
@@ -125,12 +132,12 @@
     <section class="hero" id="home">
       <main class="content">
         <h3>
-          Kunjungi KoHi-break untuk pengalaman
-          <span> minum kopi yang otentik. </span>
+          Visit KoHi-break for an
+          <span> authentic coffee experience. </span>
         </h3>
         <p>
-          KoHi-break destinasi kopi yang menggabungkan cita rasa kopi terbaik
-          dengan estetika Jepang yang memukau.
+          Kohi is a coffee destination break that combines the best taste of
+          coffee with a stunning blend of Japanese aesthetics.
         </p>
         <!-- <a href="#" class="cta">Pesan Sekarang</a> -->
       </main>
@@ -140,19 +147,19 @@
 
     <!-- About Section Ready -->
     <section id="about" class="about">
-      <h2>Tentang<span> Kami</span></h2>
+      <h2>About<span> Us</span></h2>
 
       <div class="row">
         <div class="about-img">
           <img
             src="img\jepang-isya.jpg"
-            alt="Tentang Kami"
+            alt="About Us"
             width="400"
             height="300"
           />
         </div>
         <div class="content">
-          <h3>Mengapa KoHi-break?</h3>
+          <h3>Why KoHi-break?</h3>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum a
             necessitatibus tempore illo delectus minus?
@@ -164,7 +171,7 @@
 
     <!-- Menu Section Start -->
     <section id="menu" class="menu">
-      <h2>Menu<span> Kami</span></h2>
+      <h2>Our<span> Menu</span></h2>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam porro
         excepturi asperiores aliquid itaque iusto.
@@ -220,7 +227,7 @@
 
     <!-- Product Section Ready -->
     <section class="products" id="products" x-data="products">
-      <h2><span>Produk</span> Delivery</h2>
+      <h2><span>Our</span> Products</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
         exercitationem delectus ratione blanditiis! Aspernatur, nisi!
@@ -333,7 +340,7 @@
 
     <!-- Contact Section Ready-->
     <section id="contact" class="contact">
-      <h2>Kontak<span> Kami</span></h2>
+      <h2>Contact<span> Us</span></h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
         recusandae.
@@ -351,7 +358,7 @@
         <form action="">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="nama" />
+            <input type="text" placeholder="name" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
@@ -359,9 +366,9 @@
           </div>
           <div class="input-group">
             <i data-feather="smartphone"></i>
-            <input type="text" placeholder="nomor-hp" />
+            <input type="text" placeholder="phone-number" />
           </div>
-          <button type="submit" class="btn">Kirim Pesan</button>
+          <button type="submit" class="btn">Send</button>
         </form>
       </div>
     </section>
@@ -384,7 +391,7 @@
 
       <div class="links">
         <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
+        <a href="#about">About</a>
         <a href="#menu">Menu</a>
         <a href="#contact">Kontak</a>
       </div>

@@ -122,6 +122,7 @@ const formatMessage = (obj) => {
     Nama: ${obj.name}
     Email: ${obj.email}
     No HP: ${obj.phone}
+    Jenis Order: ${obj.order}
 
 Data Pesanan
   ${JSON.parse(obj.items).map(
