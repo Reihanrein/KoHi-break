@@ -7,6 +7,12 @@ document.addEventListener("alpine:init", () => {
       { id: 4, name: "Ice Arabika", img: "4.jpg", price: 32000 },
       { id: 5, name: "Ice Espresso", img: "5.jpg", price: 28000 },
     ],
+    search: "",
+    get filteredItems() {
+      return this.items.filter((item) =>
+        item.name.toLowerCase().includes(this.search.toLowerCase())
+      );
+    },
   }));
   Alpine.store("cart", {
     items: [],

@@ -65,3 +65,23 @@ window.onclick = (e) => {
     itemDetail.style.display = "none";
   }
 };
+
+// toggle fungsional search form (ctrl+f)
+
+// document.getElementById("search-box").addEventListener("input", function () {
+//   let searchValue = this.value.trim().toLowerCase();
+//   let heroSection = document.querySelector(".hero .content h3");
+//   let heroContent = heroSection.innerText.toLowerCase();
+//   const elementHighlight = document.querySelectorAll(".highlight");
+
+//   if (heroContent.includes(searchValue)) {
+//     heroSection.classList.add("highlight"); // Menampilkan elemen jika teks pencarian ditemukan di dalamnya
+//   } else {
+//     heroSection.classList.remove("highlight"); // Menyembunyikan elemen jika teks pencarian tidak ditemukan di dalamnya
+//   }
+//   if (searchValue === "") {
+//     elementHighlight.forEach((heroSection) => {
+//       heroSection.classList.remove("highlight");
+//     });
+//   }
+// });
