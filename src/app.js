@@ -1,19 +1,27 @@
 document.addEventListener("alpine:init", () => {
+  const dataProduk = [
+    { id: 1, name: "Less sugar latte", img: "1.jpg", price: 25000 },
+    { id: 2, name: "Hot Espresso", img: "2.jpg", price: 28000 },
+    { id: 3, name: "Hot Arabika", img: "3.jpg", price: 32000 },
+    { id: 4, name: "Ice Arabika", img: "4.jpg", price: 32000 },
+    { id: 5, name: "Ice Espresso", img: "5.jpg", price: 28000 },
+  ];
   Alpine.data("products", () => ({
-    items: [
-      { id: 1, name: "Less sugar latte", img: "1.jpg", price: 25000 },
-      { id: 2, name: "Hot Espresso", img: "2.jpg", price: 28000 },
-      { id: 3, name: "Hot Arabika", img: "3.jpg", price: 32000 },
-      { id: 4, name: "Ice Arabika", img: "4.jpg", price: 32000 },
-      { id: 5, name: "Ice Espresso", img: "5.jpg", price: 28000 },
-    ],
     search: "",
+    items: dataProduk,
     get filteredItems() {
-      return this.items.filter((item) =>
-        item.name.toLowerCase().includes(this.search.toLowerCase())
-      );
+      if (this.search === "") {
+        return this.items;
+      }
+      return this.items.filter((item) => {
+        return item.name
+          .replace(/ /g, "")
+          .toLowerCase()
+          .includes(this.search.replace(/ /g, "").toLowerCase());
+      });
     },
   }));
+
   Alpine.store("cart", {
     items: [],
     total: 0,

@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KoHi-break Jobs</title>
-
+    <title>KoHi-break</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,21 +13,342 @@
     />
     <!-- feathers icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+
     <!-- Direktori css -->
-    <link rel="stylesheet" href="css/style-jobs.css" />
+    <link rel="stylesheet" href="/css/style-jobs.css" />
+    <!-- Framework Alpine JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body>
     <!-- Navbar Start -->
 
-    <nav class="Navbar">
-      <a href="#" class="Navbar-logo">KoHi<span>-break</span></a>
+    <nav class="Navbar" x-data>
+      <a href="#" class="Navbar-logo"
+        >KoHi<span>-break</span> <span id="others"> Jobs</span></a
+      >
+
       <div class="navbar-nav">
         <a href="/index.html#home">Home</a>
-        <a href="/index.html#about">Tentang Kami</a>
+        <a href="/index.html#about">About</a>
         <a href="/index.html#menu">Menu</a>
-        <a href="/index.html#products">Take Away</a>
-        <a href="/index.html#contact">Kontak</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/index.html#contact">Contact</a>
+        <a href="#">Jobs</a>
+      </div>
+
+      <div class="navbar-mark">
+        <a href="#" id="Sidebar"> <i data-feather="menu"></i></a>
       </div>
     </nav>
+
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+
+    <section class="hero" id="home">
+      <main class="content">
+        <h3>
+          We're
+          <span> Hiring. </span>
+        </h3>
+        <p>
+          Kohi-break is pleased to open various interesting job opportunities
+          for undergraduate students who want to develop themselves and gain
+          professional experience.
+        </p>
+      </main>
+    </section>
+
+    <!-- Hero Section End -->
+
+    <!-- Join Section Ready -->
+    <section id="join" class="join">
+      <h2>Join<span> Us</span></h2>
+
+      <div class="row">
+        <div class="join-img">
+          <img src="/img/join.jpg" alt="Join Us" width="400" height="300" />
+        </div>
+        <div class="content">
+          <h3>Benefits</h3>
+          <p>
+            We offer the opportunity to join our team, where you can contribute
+            to a positive and supportive work environment.
+          </p>
+          <ul>
+            <li>
+              <span>Self Development:</span> Get the opportunity to learn and
+              develop in a dynamic and supportive work environment.
+            </li>
+            <li>
+              <span>Comfortable Work Environment:</span> Enjoy a comfortable and
+              friendly work environment, where you can build good relationships
+              with a passionate team.
+            </li>
+            <li>
+              <span> Extra Income: </span> Earn extra income to help pay for
+              your education and needs.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Join Section End-->
+
+    <!-- Menu Section Start -->
+    <section id="category" class="category">
+      <h2>Available<span> Jobs</span></h2>
+      <p class="category-heading">
+        Enjoy our superior products with exclusive flavors and served for
+        Exclusive Connoisseurs.
+      </p>
+      <div class="box-container">
+        <div class="box">
+          <div class="job-title">
+            <h3 class="job-name">Barista</h3>
+            <img
+              src="/img/barista.jpg"
+              alt="barista"
+              width="400"
+              height="350"
+            />
+            <p class="location"><i data-feather="map-pin"></i> Kota Bekasi</p>
+          </div>
+          <div class="tags">
+            <p class="salary">
+              <i data-feather="dollar-sign"></i> Rp. 2 Juta/Bulan
+            </p>
+            <p class="job-type">
+              <i data-feather="briefcase"></i> Work From Office
+            </p>
+            <p class="hour"><i data-feather="clock"></i> Part-Time</p>
+          </div>
+          <div class="jobs-detail">
+            <a href="#"> View Details </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="job-title">
+            <h3 class="job-name">Barista</h3>
+            <img
+              src="/img/barista.jpg"
+              alt="barista"
+              width="400"
+              height="350"
+            />
+            <p class="location"><i data-feather="map-pin"></i> Kota Bekasi</p>
+          </div>
+          <div class="tags">
+            <p class="salary">
+              <i data-feather="dollar-sign"></i> Rp. 2 Juta/Bulan
+            </p>
+            <p class="job-type">
+              <i data-feather="briefcase"></i> Work From Office
+            </p>
+            <p class="hour"><i data-feather="clock"></i> Part-Time</p>
+          </div>
+          <div class="jobs-detail">
+            <a href="#"> View Details </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Menu Section End -->
+
+    <!-- Product Section Ready -->
+    <section class="products" id="products" x-data="products">
+      <h2><span>Our</span> Products</h2>
+      <p>
+        Fill the Day Remotely, with just a Pick, Click and Your Order Launch
+        Home Immediately. or Pick Up Your Day Fillers at Our Place.
+      </p>
+      <div class="row">
+        <template x-for="(item, index) in items" x-key="index">
+          <div class="product-card">
+            <div class="product-icons">
+              <a href="#" @click.prevent="$store.cart.add(item)">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#shopping-cart" />
+                </svg>
+              </a>
+              <a href="#" class="item-detail-button" onclick="mata()">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#eye" />
+                </svg>
+              </a>
+            </div>
+            <div class="product-images">
+              <img :src="`img/products/${item.img}`" :alt="item.name" />
+            </div>
+            <div class="product-content">
+              <h3 x-text="item.name"></h3>
+              <div class="product-stars">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+              </div>
+              <!-- <div class="product-ingredients">
+                <p>Kadar Gula: 9.02%</p>
+              </div> -->
+              <div class="product-price">
+                <span x-text="rupiah(item.price)"></span>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Contact Section Ready-->
+    <section id="contact" class="contact">
+      <h2>Contact<span> Us</span></h2>
+      <p>Contact Us For Business Inquires</p>
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126906.8251647539!2d106.970127!3d-6.284977499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d8546ad633d%3A0x79e8de8965402078!2sBekasi%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1695919561071!5m2!1sen!2sid"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <form action="">
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text" placeholder="name" />
+          </div>
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="text" placeholder="email" />
+          </div>
+          <div class="input-group">
+            <i data-feather="smartphone"></i>
+            <input type="text" placeholder="phone-number" />
+          </div>
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section End-->
+
+    <!-- Footer Section Start -->
+
+    <footer>
+      <div class="socials">
+        <a href="https://www.instagram.com/vessarein/"
+          ><i data-feather="instagram"></i
+        ></a>
+        <a href="https://www.facebook.com/reihan.darussalam/"
+          ><i data-feather="facebook"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/reihan-darussalam-182827237/"
+          ><i data-feather="linkedin"></i
+        ></a>
+      </div>
+
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="credit">
+        <p>
+          Developed by <a href="https://github.com/reihanrein">Reihanrein</a>. |
+          &copy; 2023
+        </p>
+      </div>
+    </footer>
+
+    <!-- Footer Section End -->
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Javascript -->
+
+    <script src="/js/script.js"></script>
   </body>
 </html>
+
+<!-- <i data-feather="star" class="star-full"></i>
+<i data-feather="star" class="star-full"></i>
+<i data-feather="star" class="star-full"></i>
+<i data-feather="star"></i>
+<i data-feather="star"></i> -->

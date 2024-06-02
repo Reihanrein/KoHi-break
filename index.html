@@ -36,7 +36,7 @@
         <a href="#menu">Menu</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
-        <a href="#">Jobs</a>
+        <a href="/pages/jobs.html">Jobs</a>
       </div>
 
       <div class="navbar-mark">
@@ -235,6 +235,7 @@
         Fill the Day Remotely, with just a Pick, Click and Your Order Launch
         Home Immediately. or Pick Up Your Day Fillers at Our Place.
       </p>
+      <!-- <input type="search" x-model="search" /> -->
       <div class="row">
         <template x-for="(item, index) in items" x-key="index">
           <div class="product-card">
@@ -252,7 +253,7 @@
                   <use href="img/feather-sprite.svg#shopping-cart" />
                 </svg>
               </a>
-              <a href="#" class="item-detail-button" onclick="mata()">
+              <a href="#" class="item-detail-button" @click.prevent="mata()">
                 <svg
                   width="24"
                   height="24"

@@ -66,6 +66,17 @@ window.onclick = (e) => {
   }
 };
 
+// const searchBar = document.querySelector("#search-box");
+
+// const produk = document.querySelector("#products .row template");
+// const produkCard = produk.querySelectorAll(".product-card");
+
+// console.log(produkCard);
+
+// searchBar.addEventListener("keyup", () => {
+//   console.log(searchBar.value);
+// });
+
 // toggle fungsional search form (ctrl+f)
 
 // document.getElementById("search-box").addEventListener("input", function () {
