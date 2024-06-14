@@ -27,7 +27,7 @@
   <body>
     <!-- Navbar Start -->
 
-    <nav class="Navbar" x-data>
+    <nav class="Navbar" x-data="products">
       <a href="#" class="Navbar-logo">KoHi<span>-break</span></a>
 
       <div class="navbar-nav">
@@ -36,7 +36,7 @@
         <a href="#menu">Menu</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
-        <a href="/pages/jobs.html">Jobs</a>
+        <a href="pages/jobs.html">Jobs</a>
       </div>
 
       <div class="navbar-mark">
@@ -53,7 +53,12 @@
       </div>
       <!-- Search Button Start -->
       <div class="search-form">
-        <input type="search" id="search-box" placeholder="search here.." />
+        <input
+          type="search"
+          id="search-box"
+          x-model="search"
+          placeholder="search here.."
+        />
         <label for="search-box"><i data-feather="search"></i></label>
       </div>
       <!-- Search Button End -->
@@ -349,28 +354,28 @@
       <div class="row">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126906.8251647539!2d106.970127!3d-6.284977499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d8546ad633d%3A0x79e8de8965402078!2sBekasi%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1695919561071!5m2!1sen!2sid"
-          width="600"
+          width="300"
           height="450"
           style="border: 0"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-        <form action="">
-          <div class="input-group">
-            <i data-feather="user"></i>
-            <input type="text" placeholder="name" />
-          </div>
-          <div class="input-group">
-            <i data-feather="mail"></i>
-            <input type="text" placeholder="email" />
-          </div>
-          <div class="input-group">
-            <i data-feather="smartphone"></i>
-            <input type="text" placeholder="phone-number" />
-          </div>
-          <button type="submit" class="btn">Send</button>
-        </form>
+        <!-- <form action=""> -->
+        <div class="input-group">
+          <i data-feather="user"></i>
+          <input type="text" id="fullName2" placeholder="name" />
+        </div>
+        <div class="input-group">
+          <i data-feather="mail"></i>
+          <input type="text" id="email_id2" placeholder="email" />
+        </div>
+        <div class="input-group">
+          <i data-feather="message-square"></i>
+          <input type="text" id="message2" placeholder="message" />
+        </div>
+        <button type="submit" class="btn" onclick="SendMail2()">Send</button>
+        <!-- </form> -->
       </div>
     </section>
     <!-- Contact Section End-->
@@ -409,38 +414,88 @@
 
     <!-- Modal Box Item Detail Start -->
 
-    <div class="modal" id="item-detail">
-      <!-- <template x-for="(item, index) in items" x-key="index"> -->
-      <div class="modal-container">
-        <a href="#" class="close-icon"><i data-feather="x"></i></a>
-        <div class="modal-content">
-          <img src="img/products/1.jpg" alt="item.name" />
-          <div class="product-content">
-            <!-- <h3 x-text="item.name"></h3> -->
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
-              delectus nihil dolorem! Ea repellendus aperiam voluptatem est non
-              consequatur! Minima deserunt ut alias unde ipsam.
-            </p>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-              <i data-feather="star"></i>
+    <div class="modal" id="item-detail" x-data="products">
+      <template x-for="(item, index) in items" x-key="index">
+        <div class="modal-container">
+          <a href="#" class="close-icon"><i data-feather="x"></i></a>
+          <div class="modal-content">
+            <img :src="`img/products/${item.img}`" :alt="item.name" />
+            <div class="product-content">
+              <h3 x-text="item.name"></h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Numquam delectus nihil dolorem! Ea repellendus aperiam
+                voluptatem est non consequatur! Minima deserunt ut alias unde
+                ipsam.
+              </p>
+              <div class="product-stars">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="#b6895b"
+                  stroke="#b6895b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+              </div>
+              <div class="product-price">
+                <span x-text="rupiah(item.price)">IDR 12K</span> -->
+              </div>
+              <a href="#" @click.prevent="$store.cart.add(item)"
+                ><i data-feather="shopping-cart"></i> <span>+Keranjang</span></a
+              >
             </div>
-            <div class="product-price">
-              <!-- <span x-text="rupiah(item.price)">IDR 12K</span> -->
-            </div>
-            <a href="#" @click.prevent="$store.cart.add(item)"
-              ><i data-feather="shopping-cart"></i> <span>+Keranjang</span></a
-            >
           </div>
         </div>
-      </div>
-      <!-- </template> -->
+      </template>
     </div>
-
     <!-- Modal Box Item Detail End -->
 
     <!-- Feather Icons -->
@@ -451,11 +506,107 @@
     <!-- Javascript -->
 
     <script src="./js/script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "OHhj2_2kAhvip33MD",
+        });
+      })();
+    </script>
   </body>
 </html>
 
-<!-- <i data-feather="star" class="star-full"></i>
-<i data-feather="star" class="star-full"></i>
-<i data-feather="star" class="star-full"></i>
-<i data-feather="star"></i>
-<i data-feather="star"></i> -->
+<!-- <div
+      class="modal"
+      id="item-detail"
+      x-show="isShow"
+      @click.self="isShow = false"
+      x-data="products"
+    >
+      <template x-for="(currentProduct, index) in items" x-key="index">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content" x-show="currentProduct">
+          <img
+            :src="`img/products/${currentProduct.img}`"
+            :alt="currentProduct.name"
+          />
+          <div class="product-content">
+            <h3 x-text="currentProduct.name"></h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
+              delectus nihil dolorem! Ea repellendus aperiam voluptatem est non
+              consequatur! Minima deserunt ut alias unde ipsam.
+            </p>
+            <div class="product-stars">
+              <svg
+                width="24"
+                height="24"
+                fill="#b6895b"
+                stroke="#b6895b"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <use href="img/feather-sprite.svg#star" />
+              </svg>
+              <svg
+                width="24"
+                height="24"
+                fill="#b6895b"
+                stroke="#b6895b"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <use href="img/feather-sprite.svg#star" />
+              </svg>
+              <svg
+                width="24"
+                height="24"
+                fill="#b6895b"
+                stroke="#b6895b"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <use href="img/feather-sprite.svg#star" />
+              </svg>
+              <svg
+                width="24"
+                height="24"
+                fill="#b6895b"
+                stroke="#b6895b"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <use href="img/feather-sprite.svg#star" />
+              </svg>
+              <svg
+                width="24"
+                height="24"
+                fill="#b6895b"
+                stroke="#b6895b"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <use href="img/feather-sprite.svg#star" />
+              </svg>
+            </div>
+            <div class="product-price">
+              <span x-text="rupiah(item.price)">IDR 12K</span>
+            </div>
+            <a href="#" @click.prevent="$store.cart.add(currentProduct)"
+              ><i data-feather="shopping-cart"></i> <span>+Keranjang</span></a
+            >
+          </div>
+        </div>
+      </div>
+     </template> 
+    </div> -->

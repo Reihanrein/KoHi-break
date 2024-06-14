@@ -66,6 +66,19 @@ window.onclick = (e) => {
   }
 };
 
+function SendMail() {
+  var params = {
+    from_name: document.getElementById("fullName").value,
+    email_id: document.getElementById("email_id").value,
+    message: document.getElementById("message").value,
+  };
+  emailjs
+    .send("service_8jfzpej", "template_ihzl9h6", params)
+    .then(function (res) {
+      alert("Success" + res.status);
+    });
+}
+
 // const searchBar = document.querySelector("#search-box");
 
 // const produk = document.querySelector("#products .row template");

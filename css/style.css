@@ -529,7 +529,7 @@ body {
 /* Contact Section READY */
 
 .contact .row {
-  display: flex;
+  /* display: flex; */
   margin-top: 2rem;
   background-color: #222;
 }
@@ -540,13 +540,13 @@ body {
   object-fit: cover;
 }
 
-.contact .row form {
+.contact .row {
   flex: 1 1 45rem;
   padding: 5rem 2rem;
   text-align: center;
 }
 
-.contact .row form .input-group {
+.contact .row .input-group {
   display: flex;
   align-items: center;
   margin-top: 2rem;
@@ -556,7 +556,7 @@ body {
   border-radius: 1.5rem;
 }
 
-.contact .row form .input-group input {
+.contact .row .input-group input {
   width: 100%;
   padding: 2rem;
   font-size: 1.7rem;
@@ -564,7 +564,7 @@ body {
   color: #fff;
 }
 
-.contact .row form .btn {
+.contact .row .btn {
   margin-top: 3rem;
   padding: 1rem 3rem;
   display: inline-block;

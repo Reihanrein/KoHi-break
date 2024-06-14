@@ -9,8 +9,9 @@ document.addEventListener("alpine:init", () => {
   Alpine.data("products", () => ({
     search: "",
     items: dataProduk,
+    currentProduct: null,
     get filteredItems() {
-      if (this.search === "") {
+      if (this.search.trim() === "") {
         return this.items;
       }
       return this.items.filter((item) => {
@@ -19,6 +20,10 @@ document.addEventListener("alpine:init", () => {
           .toLowerCase()
           .includes(this.search.replace(/ /g, "").toLowerCase());
       });
+    },
+    setCurrentProduct(idProduct) {
+      this.currentProduct = this.items.find((item) => item.id === idProduct);
+      this.isShow = true;
     },
   }));
 
@@ -100,6 +105,19 @@ document.addEventListener("alpine:init", () => {
   });
 });
 
+function SendMail2() {
+  var params = {
+    from_name: document.getElementById("fullName2").value,
+    email_id: document.getElementById("email_id2").value,
+    message: document.getElementById("message2").value,
+  };
+  emailjs
+    .send("service_8jfzpej", "template_ihzl9h6", params)
+    .then(function (res) {
+      alert("Success" + res.status);
+    });
+}
+
 // Validasi Form
 const validator = document.querySelector(".checkout-button");
 validator.disabled = true;
@@ -127,7 +145,7 @@ validator.addEventListener("click", function (e) {
   const objData = Object.fromEntries(data);
   console.log(objData);
   const message = formatMessage(objData);
-  window.open("http://wa.me/621212121212?text=" + encodeURIComponent(message));
+  window.open("http://wa.me/6288293487354?text=" + encodeURIComponent(message));
 });
 
 // Format data ke whatsapp

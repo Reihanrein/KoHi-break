@@ -290,7 +290,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("../img/bg-jobs.svg");
+  background-image: url("../img/newbg-jobs.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -345,6 +345,7 @@ body {
 
 /* Join Section READY */
 .join,
+.jd,
 .category,
 .products,
 .contact {
@@ -352,6 +353,7 @@ body {
 }
 
 .join h2,
+.jd,
 .category h2,
 .products h2,
 .contact h2 {
@@ -362,6 +364,7 @@ body {
 }
 
 .join span,
+.jd span,
 .category h2 span,
 .products h2 span,
 .contact h2 span {
@@ -412,7 +415,63 @@ body {
 }
 
 /* join Section END */
+/* jd section start */
 
+.jd .row {
+  display: flex;
+}
+
+.jd .row .jd-img {
+  flex: 1 1 45rem;
+}
+
+/* .jd .row .jd-img img {
+  width: 100%;
+} */
+
+.jd .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.jd .row .content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.jd .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6rem;
+  text-align: justify;
+}
+.jd .row .content li {
+  font-weight: 300;
+  line-height: 1.5rem;
+  text-align: justify;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+.jd .row .content span {
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: justify;
+  color: lightseagreen;
+}
+.jd .jd-details a {
+  border-radius: 1rem;
+  border: solid #fff;
+  border-width: 3px;
+  color: #fff;
+  padding: 0 3px;
+}
+
+.jd .jd-details a:hover {
+  background-color: lightseagreen;
+}
+/* jd section start */
 /* Category Section READY */
 
 .contact p {
@@ -442,19 +501,33 @@ body {
 .category .box-container .box {
   border: solid #fff;
   border-width: 5px;
-  padding: 2rem;
+  /* padding: 2rem; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.category .box-container .job-title {
+  /* padding: 2rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category .tags {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .category .job-title .job-name {
-  margin-left: 13.5rem;
-  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.category .job-title img {
+/* .category .job-title img {
   border-radius: 30rem;
   margin: 0 3rem;
-}
+} */
 
 .category .location {
   text-align: left;
@@ -566,7 +639,7 @@ body {
 /* Contact Section READY */
 
 .contact .row {
-  display: flex;
+  /* display: flex; */
   margin-top: 2rem;
   background-color: #222;
 }
@@ -577,13 +650,13 @@ body {
   object-fit: cover;
 }
 
-.contact .row form {
+.contact .row {
   flex: 1 1 45rem;
   padding: 5rem 2rem;
   text-align: center;
 }
 
-.contact .row form .input-group {
+.contact .row .input-group {
   display: flex;
   align-items: center;
   margin-top: 2rem;
@@ -593,7 +666,7 @@ body {
   border-radius: 1.5rem;
 }
 
-.contact .row form .input-group input {
+.contact .row .input-group input {
   width: 100%;
   padding: 2rem;
   font-size: 1.7rem;
@@ -601,7 +674,7 @@ body {
   color: #fff;
 }
 
-.contact .row form .btn {
+.contact .row .btn {
   margin-top: 3rem;
   padding: 1rem 3rem;
   display: inline-block;
@@ -790,9 +863,9 @@ footer .credit a {
     font-size: 1.2rem;
   }
 
-  .category .job-title .job-name {
-    margin-left: 15rem;
-  }
+  /* .category .job-title .job-name {
+    margin-bottom: 12rem;
+  } */
 
   .category .job-title img {
     width: 250px;
