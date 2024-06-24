@@ -1,10 +1,45 @@
 document.addEventListener("alpine:init", () => {
   const dataProduk = [
-    { id: 1, name: "Less sugar latte", img: "1.jpg", price: 25000 },
-    { id: 2, name: "Hot Espresso", img: "2.jpg", price: 28000 },
-    { id: 3, name: "Hot Arabika", img: "3.jpg", price: 32000 },
-    { id: 4, name: "Ice Arabika", img: "4.jpg", price: 32000 },
-    { id: 5, name: "Ice Espresso", img: "5.jpg", price: 28000 },
+    {
+      id: 1,
+      name: "Less sugar latte",
+      img: "1.jpg",
+      price: 25000,
+      detail:
+        "Sugar Content: 0.5%, Acidity: 2.5%, Bitternes: 3.5%, Milk: Full Cream, Temperature: Hot",
+    },
+    {
+      id: 2,
+      name: "Hot Espresso",
+      img: "2.jpg",
+      price: 28000,
+      detail:
+        "Sugar Content: 0%, Acidity: 4.5%, Bitternes: 22.5%, Milk: Without Milk, Temperature: Hot",
+    },
+    {
+      id: 3,
+      name: "Hot Arabika",
+      img: "3.jpg",
+      price: 32000,
+      detail:
+        "Sugar Content: 3%, /n Acidity: 3.5%, Bitternes: 17.5%, Milk: Without Milk, Temperature: Hot",
+    },
+    {
+      id: 4,
+      name: "Ice Arabika",
+      img: "4.jpg",
+      price: 32000,
+      detail:
+        "Sugar Content: 3%, Acidity: 3.5%, Bitternes: 17.5%, Milk: Without Milk, Temperature: Cold",
+    },
+    {
+      id: 5,
+      name: "Ice Espresso",
+      img: "5.jpg",
+      price: 28000,
+      detail:
+        "Sugar Content: 0%, Acidity: 4.5%, Bitternes: 22.5%, Milk: Without Milk, Temperature: Cold",
+    },
   ];
   Alpine.data("products", () => ({
     search: "",

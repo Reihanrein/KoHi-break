@@ -666,7 +666,7 @@ footer .credit a {
 }
 
 .modal-container img {
-  height: 20rem;
+  height: 19rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
 }
@@ -683,9 +683,13 @@ footer .credit a {
   width: 12rem;
   background-color: var(--primary);
   color: #fff;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   padding: 1rem 1.6rem;
   justify-content: center;
+}
+
+.modal .modal-price {
+  font-weight: bold;
 }
 
 /* Modal Content END */

@@ -83,7 +83,7 @@
             </div>
           </div>
         </template>
-        <h4 x-show="!$store.cart.items.length">Keranjang anda kosong</h4>
+        <h4 x-show="!$store.cart.items.length">Your cart is empty</h4>
         <h4 x-show="$store.cart.items.length">
           Total: <span x-text="rupiah($store.cart.total)"></span>
         </h4>
@@ -422,12 +422,7 @@
             <img :src="`img/products/${item.img}`" :alt="item.name" />
             <div class="product-content">
               <h3 x-text="item.name"></h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Numquam delectus nihil dolorem! Ea repellendus aperiam
-                voluptatem est non consequatur! Minima deserunt ut alias unde
-                ipsam.
-              </p>
+              <p x-text="item.detail"></p>
               <div class="product-stars">
                 <svg
                   width="24"
@@ -485,11 +480,25 @@
                   <use href="img/feather-sprite.svg#star" />
                 </svg>
               </div>
-              <div class="product-price">
-                <span x-text="rupiah(item.price)">IDR 12K</span> -->
+              <div class="modal-price">
+                <span x-text="rupiah(item.price)"></span>
               </div>
               <a href="#" @click.prevent="$store.cart.add(item)"
-                ><i data-feather="shopping-cart"></i> <span>+Keranjang</span></a
+                ><i data-feather="shopping-cart"></i>
+                <span
+                  ><svg
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <use href="img/feather-sprite.svg#shopping-cart" />
+                  </svg>
+                  Add to cart</span
+                ></a
               >
             </div>
           </div>
